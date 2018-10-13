@@ -8,6 +8,7 @@ const expressLayouts=require("express-ejs-layouts")
 
 
 const githubController = require('./controllers/github');
+const countriesController = require('./controllers/countries');
 // import homeController = require('./controllers/home');
 // import userController = require('./controtsllers/user');
 // import apiController = require('./controllers/api');
@@ -56,6 +57,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get('/api/github', githubController.getGithub);
+
+
+app.get('/api/countries', countriesController.getCountries);
 
 
 app.listen(app.get('port'), () => {
